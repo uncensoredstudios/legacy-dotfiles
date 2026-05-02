@@ -100,7 +100,7 @@ OFFICIAL_PKGS=(
     # Gaming
     gamemode mangohud lib32-mangohud
     # Themes
-    papirus-icon-theme xcursor-bibata
+    papirus-icon-theme bibata-cursor-theme-bin
     # Misc
     polkit-kde-agent xdotool jq
     # Audio effects / sounds
