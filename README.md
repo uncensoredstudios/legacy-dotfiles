@@ -32,10 +32,10 @@
 
 ---
 
-## Установка одной командой
+## Установка за 4 команды
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/legacy-dotfiles ~/.dotfiles
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/uncensoredstudios/legacy-dotfiles/main/install.sh)"
 cd ~/.dotfiles
 chmod +x install.sh
 ./install.sh
