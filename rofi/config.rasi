@@ -1,0 +1,19 @@
+configuration {
+    modi:                    "drun,run,window,filebrowser";
+    font:                    "JetBrainsMono Nerd Font 12";
+    show-icons:              true;
+    display-drun:            "  Apps";
+    display-run:             "  Run";
+    display-window:          "󰖯  Windows";
+    display-filebrowser:     "  Files";
+    drun-display-format:     "{name}";
+    window-format:           "{w}: {c} — {t}";
+    sidebar-mode:            true;
+    cycle:                   true;
+    normalize-match:         true;
+    matching:                "fuzzy";
+    sort:                    true;
+    sorting-method:          "fzf";
+}
+
+@theme "~/.config/rofi/gruvbox.rasi"

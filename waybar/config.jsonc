@@ -1,0 +1,159 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 42,
+    "margin-top": 8,
+    "margin-left": 12,
+    "margin-right": 12,
+    "spacing": 4,
+    "exclusive": true,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "custom/fps",
+        "custom/music",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "󰲠",
+            "2": "󰲢",
+            "3": "󰲤",
+            "4": "󰲦",
+            "5": "󰲨",
+            "6": "󰲪",
+            "7": "󰲬",
+            "8": "󰲮",
+            "9": "󰲰",
+            "10": "󰿬",
+            "urgent": "󰗖",
+            "active": "󰮯",
+            "default": "󰊠"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "sort-by-number": true
+    },
+
+    "hyprland/window": {
+        "format": "  {}",
+        "max-length": 40,
+        "separate-outputs": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹 $1",
+            "(.*)Kitty": "󰄛 Terminal",
+            "": "󰇄 Desktop"
+        }
+    },
+
+    "clock": {
+        "format": "󰥔  {:%H:%M}",
+        "format-alt": "󰃭  {:%a, %d %b %Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 1
+    },
+
+    "custom/fps": {
+        "exec": "~/.config/waybar/scripts/fps.sh",
+        "format": "󰊴  {}",
+        "interval": 2,
+        "tooltip": false,
+        "on-click": "~/.config/hypr/scripts/fps-toggle.sh"
+    },
+
+    "custom/music": {
+        "exec": "~/.config/waybar/scripts/music.sh",
+        "format": "{}",
+        "interval": 2,
+        "escape": true,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "max-length": 30
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟  Muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰏲",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
+        "scroll-step": 2,
+        "tooltip-format": "{desc} — {volume}%"
+    },
+
+    "network": {
+        "format-wifi": "󰤨  {essid}",
+        "format-ethernet": "󰈀  {ifname}",
+        "format-disconnected": "󰤭  Offline",
+        "format-linked": "󰈀  {ifname} (No IP)",
+        "tooltip-format-wifi": "󰤨 {essid} ({signalStrength}%)\n󰩟 {ipaddr}/{cidr}\n⬇ {bandwidthDownBits}  ⬆ {bandwidthUpBits}",
+        "tooltip-format-ethernet": "󰈀 {ifname}\n󰩟 {ipaddr}/{cidr}",
+        "on-click": "nm-connection-editor",
+        "interval": 5
+    },
+
+    "cpu": {
+        "format": "󰻠  {usage}%",
+        "tooltip-format": "CPU: {usage}%\nLoad: {load}",
+        "interval": 2,
+        "on-click": "kitty -e btop"
+    },
+
+    "memory": {
+        "format": "󰍛  {percentage}%",
+        "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G",
+        "interval": 3,
+        "on-click": "kitty -e btop"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "format-plugged": "󰂄  {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo} — {capacity}%"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "on-click": "~/.config/waybar/scripts/power-menu.sh",
+        "tooltip": false
+    }
+}

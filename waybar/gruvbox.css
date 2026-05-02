@@ -1,0 +1,27 @@
+/* Gruvbox Dark Color Palette */
+@define-color gb-bg0     #282828;
+@define-color gb-bg0-h   #1d2021;
+@define-color gb-bg1     #3c3836;
+@define-color gb-bg2     #504945;
+@define-color gb-bg3     #665c54;
+@define-color gb-bg4     #7c6f64;
+@define-color gb-fg0     #fbf1c7;
+@define-color gb-fg1     #ebdbb2;
+@define-color gb-fg2     #d5c4a1;
+@define-color gb-fg3     #bdae93;
+@define-color gb-fg4     #a89984;
+@define-color gb-gray    #928374;
+@define-color gb-red     #cc241d;
+@define-color gb-red-b   #fb4934;
+@define-color gb-green   #98971a;
+@define-color gb-green-b #b8bb26;
+@define-color gb-yellow  #d79921;
+@define-color gb-yellow-b #fabd2f;
+@define-color gb-blue    #458588;
+@define-color gb-blue-b  #83a598;
+@define-color gb-purple  #b16286;
+@define-color gb-purple-b #d3869b;
+@define-color gb-aqua    #689d6a;
+@define-color gb-aqua-b  #8ec07c;
+@define-color gb-orange  #d65d0e;
+@define-color gb-orange-b #fe8019;

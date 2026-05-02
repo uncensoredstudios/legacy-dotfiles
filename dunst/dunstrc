@@ -1,0 +1,97 @@
+[global]
+    monitor               = 0
+    follow                = mouse
+    
+    # Geometry — floating pill style
+    width                 = (0, 400)
+    height                = 200
+    origin                = top-right
+    offset                = 14x54
+    scale                 = 0
+    notification_limit    = 5
+
+    # Transparency / blur hint
+    transparency          = 12
+    corner_radius         = 12
+    frame_width           = 1
+    frame_color           = "#d79921"
+    gap_size              = 6
+
+    # Padding
+    padding               = 12
+    horizontal_padding    = 14
+    text_icon_padding     = 12
+    icon_position         = left
+    min_icon_size         = 42
+    max_icon_size         = 42
+
+    # Font
+    font                  = JetBrainsMono Nerd Font 11
+
+    # Text format
+    format                = "<b>%s</b>\n%b"
+    sort                  = urgency_descending
+    markup                = full
+    word_wrap             = yes
+
+    # Animation
+    show_age_threshold    = 60
+    hide_duplicate_count  = false
+    indicate_hidden       = yes
+
+    # Timeout
+    sticky_history        = yes
+    history_length        = 20
+
+    # Progress bar
+    progress_bar          = true
+    progress_bar_height   = 6
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 180
+    progress_bar_max_width = 360
+    progress_bar_corner_radius = 3
+    highlight             = "#d79921"
+
+    # Mouse
+    mouse_left_click      = close_notification
+    mouse_middle_click    = do_action, close_notification
+    mouse_right_click     = close_all_notifications
+
+    # Sounds on notification (optional — requires paplay)
+    # script = ~/.config/dunst/notify-sound.sh
+
+    # Idle threshold
+    idle_threshold        = 120
+
+[urgency_low]
+    background            = "#282828ee"
+    foreground            = "#ebdbb2"
+    frame_color           = "#504945"
+    timeout               = 4
+    icon                  = /usr/share/icons/Papirus-Dark/32x32/status/dialog-information.svg
+
+[urgency_normal]
+    background            = "#282828ee"
+    foreground            = "#ebdbb2"
+    frame_color           = "#d79921"
+    timeout               = 6
+
+[urgency_critical]
+    background            = "#282828ee"
+    foreground            = "#fb4934"
+    frame_color           = "#cc241d"
+    timeout               = 0
+
+[volume]
+    summary               = "Volume*"
+    set_stack_tag         = "volume"
+    timeout               = 2
+
+[brightness]
+    summary               = "Brightness*"
+    set_stack_tag         = "brightness"
+    timeout               = 2
+
+[screenshot]
+    summary               = "Screenshot*"
+    timeout               = 3

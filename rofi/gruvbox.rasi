@@ -1,0 +1,123 @@
+* {
+    bg0:     #282828ee;
+    bg1:     #3c3836cc;
+    bg2:     #504945;
+    fg0:     #fbf1c7;
+    fg1:     #ebdbb2;
+    fg2:     #d5c4a1;
+    yellow:  #d79921;
+    yellow2: #fabd2f;
+    orange:  #fe8019;
+    gray:    #928374;
+    red:     #fb4934;
+    green:   #b8bb26;
+
+    background-color:    transparent;
+    text-color:          @fg1;
+    font:                "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    background-color:    @bg0;
+    border:              2px solid;
+    border-color:        @yellow;
+    border-radius:       16px;
+    width:               520px;
+    padding:             8px;
+    x-offset:            0;
+    y-offset:            0;
+    location:            center;
+}
+
+mainbox {
+    background-color:    transparent;
+    children:            [ inputbar, mode-switcher, listview ];
+    spacing:             6px;
+    padding:             6px;
+}
+
+inputbar {
+    background-color:    @bg1;
+    border-radius:       12px;
+    padding:             10px 14px;
+    spacing:             10px;
+    children:            [ prompt, entry ];
+    border:              1px solid;
+    border-color:        @bg2;
+}
+
+prompt {
+    color:               @yellow;
+    font:                "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    color:               @fg0;
+    placeholder:         "Search...";
+    placeholder-color:   @gray;
+}
+
+mode-switcher {
+    background-color:    @bg1;
+    border-radius:       10px;
+    spacing:             4px;
+    padding:             4px;
+}
+
+button {
+    background-color:    transparent;
+    border-radius:       8px;
+    color:               @gray;
+    padding:             6px 12px;
+    cursor:              pointer;
+}
+
+button selected {
+    background-color:    @yellow;
+    color:               @bg0;
+    font:                "JetBrainsMono Nerd Font Bold 12";
+}
+
+listview {
+    background-color:    transparent;
+    lines:               8;
+    columns:             1;
+    spacing:             2px;
+    padding:             4px 0;
+}
+
+element {
+    background-color:    transparent;
+    border-radius:       10px;
+    padding:             8px 12px;
+    spacing:             10px;
+    children:            [ element-icon, element-text ];
+    cursor:              pointer;
+}
+
+element selected {
+    background-color:    rgba(215, 153, 33, 0.22);
+    border:              1px solid;
+    border-color:        rgba(215, 153, 33, 0.4);
+}
+
+element-icon {
+    size:                24px;
+}
+
+element-text {
+    color:               @fg1;
+    vertical-align:      0.5;
+}
+
+element selected element-text {
+    color:               @yellow2;
+}
+
+scrollbar {
+    background-color:    @bg1;
+    handle-color:        @yellow;
+    handle-width:        4px;
+    border-radius:       4px;
+    width:               4px;
+}

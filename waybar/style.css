@@ -1,0 +1,201 @@
+/* ========================================
+   WAYBAR — Gruvbox Liquid Glass
+   Legacy Dotfiles
+   ======================================== */
+
+@import url("gruvbox.css");
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+window#waybar {
+    background: transparent;
+    border: none;
+}
+
+/* ── Main bar container ── */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: rgba(40, 40, 40, 0.72);
+    border: 1px solid rgba(215, 153, 33, 0.25);
+    border-radius: 14px;
+    padding: 4px 8px;
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.45),
+        0 1px 0 rgba(251, 241, 199, 0.06) inset,
+        0 -1px 0 rgba(0, 0, 0, 0.3) inset;
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+}
+
+/* ── Workspaces ── */
+#workspaces {
+    background: transparent;
+    margin: 2px 4px;
+    padding: 0;
+}
+
+#workspaces button {
+    color: @gb-gray;
+    background: transparent;
+    padding: 2px 8px;
+    margin: 0 1px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#workspaces button:hover {
+    color: @gb-yellow;
+    background: rgba(215, 153, 33, 0.15);
+    transform: translateY(-1px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(215, 153, 33, 0.3);
+}
+
+#workspaces button.active {
+    color: @gb-bg0;
+    background: linear-gradient(135deg, @gb-yellow, @gb-orange);
+    box-shadow:
+        0 2px 12px rgba(215, 153, 33, 0.5),
+        0 1px 0 rgba(255,255,255,0.15) inset;
+    transform: translateY(-1px);
+}
+
+#workspaces button.urgent {
+    color: @gb-bg0;
+    background: @gb-red;
+    animation: urgent-pulse 1s infinite;
+}
+
+@keyframes urgent-pulse {
+    0%, 100% { box-shadow: 0 0 8px rgba(204, 36, 29, 0.6); }
+    50%       { box-shadow: 0 0 16px rgba(204, 36, 29, 0.9); }
+}
+
+/* ── Window title ── */
+#window {
+    color: @gb-fg2;
+    padding: 0 8px;
+    margin: 0 4px;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* ── Clock ── */
+#clock {
+    color: @gb-yellow;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 0 12px;
+    letter-spacing: 0.5px;
+}
+
+#clock:hover {
+    color: @gb-fg1;
+}
+
+/* ── Shared module style ── */
+#cpu,
+#memory,
+#battery,
+#network,
+#pulseaudio,
+#custom-fps,
+#custom-music,
+#tray,
+#custom-power {
+    color: @gb-fg2;
+    padding: 2px 10px;
+    margin: 2px 0;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+/* ── Hover glow effect ── */
+#cpu:hover          { color: @gb-aqua;   background: rgba(104,157,106, 0.18); }
+#memory:hover       { color: @gb-blue;   background: rgba(69,133,136,  0.18); }
+#network:hover      { color: @gb-green;  background: rgba(152,151,26,  0.18); }
+#pulseaudio:hover   { color: @gb-orange; background: rgba(214,93,14,   0.18); }
+#battery:hover      { color: @gb-yellow; background: rgba(215,153,33,  0.18); }
+#custom-fps:hover   { color: @gb-purple; background: rgba(177,98,134,  0.18); }
+
+/* ── Battery states ── */
+#battery.warning   { color: @gb-yellow; }
+#battery.critical  { color: @gb-red; animation: blink 1s steps(1) infinite; }
+#battery.charging  { color: @gb-green; }
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+}
+
+/* ── Music player ── */
+#custom-music {
+    color: @gb-purple;
+    font-style: italic;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── FPS counter ── */
+#custom-fps {
+    color: @gb-aqua;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.5px;
+}
+
+/* ── Tray ── */
+#tray {
+    padding: 2px 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(204, 36, 29, 0.3);
+    border-radius: 8px;
+}
+
+/* ── Power button ── */
+#custom-power {
+    color: @gb-red;
+    font-size: 16px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-left: 4px;
+}
+
+#custom-power:hover {
+    color: @gb-bg0;
+    background: @gb-red;
+    box-shadow: 0 0 12px rgba(204, 36, 29, 0.6);
+    transform: scale(1.15);
+}
+
+/* ── Tooltip ── */
+tooltip {
+    background: rgba(29, 32, 33, 0.95);
+    border: 1px solid rgba(215, 153, 33, 0.35);
+    border-radius: 10px;
+    padding: 6px 10px;
+    color: @gb-fg1;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+tooltip label {
+    color: @gb-fg1;
+    font-size: 12px;
+}
