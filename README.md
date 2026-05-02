@@ -32,13 +32,10 @@
 
 ---
 
-## Установка за 4 команды
+## Установка 1 команда
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/uncensoredstudios/legacy-dotfiles/main/install.sh)"
-cd ~/.dotfiles
-chmod +x install.sh
-./install.sh
 ```
 
 ---
@@ -91,34 +88,4 @@ chmod +x install.sh
 
 ---
 
-## Структура
 
-```
-~/.dotfiles/
-├── install.sh          ← главный установщик
-├── hyprland/
-│   ├── hyprland.conf
-│   └── hypridle.conf
-├── waybar/
-│   ├── config.jsonc
-│   ├── style.css
-│   ├── gruvbox.css
-│   └── scripts/
-├── kitty/
-│   ├── kitty.conf
-│   └── welcome.sh
-├── dunst/dunstrc
-├── hyprlock/hyprlock.conf
-├── rofi/
-│   ├── config.rasi
-│   └── gruvbox.rasi
-├── scripts/
-│   ├── gamemode-setup.sh
-│   ├── resolution-picker.sh
-│   ├── fps-toggle.sh
-│   ├── volume-notify.sh
-│   └── system-snapshot.sh
-└── config/
-    ├── MangoHud/MangoHud.conf
-    └── gtk-3.0/settings.ini
-```
